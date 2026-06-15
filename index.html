@@ -9,8 +9,8 @@
     <link rel="manifest" href="./manifest.json">
     <title>Sniper</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/assets/index-CPIWVAFp.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CAUDiAcT.css">
+    <script type="module" crossorigin src="/assets/index-Bh9NtCIX.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-ayYUuUyp.css">
   <link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
   <body>
     <div class="app-container">
@@ -19,14 +19,14 @@
       </main>
       <!-- Indicator Settings Modal -->
       <div id="settings-modal" class="modal-overlay" style="display: none; z-index: 10000; justify-content: center; align-items: center; background: rgba(0,0,0,0.7);">
-        <div class="modal-content" style="width: 400px; max-width: 90%; background: #1e222d; padding: 20px; border-radius: 8px; border: 1px solid #333; max-height: 80vh; overflow-y: auto;">
-          <h3 style="color: #fff; margin-top: 0; margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">Indicator Settings</h3>
-          <div id="settings-form" style="display: flex; flex-direction: column; gap: 12px;">
+        <div class="modal-content" style="width: 420px; max-width: 94%; background: #1e222d; padding: 16px; border-radius: 12px; border: 1px solid #333; max-height: 85vh; overflow-y: auto; -webkit-overflow-scrolling: touch;">
+          <h3 style="color: #fff; margin-top: 0; margin-bottom: 12px; border-bottom: 1px solid #333; padding-bottom: 10px; font-size: 16px;">⚙️ Indicator Settings</h3>
+          <div id="settings-form" style="display: flex; flex-direction: column; gap: 10px;">
             <!-- Settings rows will be generated here -->
           </div>
-          <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; border-top: 1px solid #333; padding-top: 15px;">
-            <button id="settings-cancel-btn" style="background: #333; color: #fff; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: bold;">Cancel</button>
-            <button id="settings-save-btn" style="background: #2962FF; color: #fff; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: bold;">Save</button>
+          <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 16px; border-top: 1px solid #333; padding-top: 12px;">
+            <button id="settings-cancel-btn" style="background: #333; color: #fff; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 14px; min-height: 44px; min-width: 70px; touch-action: manipulation;">Cancel</button>
+            <button id="settings-save-btn" style="background: #2962FF; color: #fff; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 14px; min-height: 44px; min-width: 70px; touch-action: manipulation;">Save</button>
           </div>
         </div>
       </div>
@@ -89,7 +89,7 @@
       <div id="toast-container" class="toast-container"></div>
       
       <!-- Top Control Panel (Refresh, Snap, TF) -->
-      <div class="control-panel-top" style="position: absolute; top: 10px; left: 10px; z-index: 9999; display: flex; align-items: center; gap: 8px;">
+      <div class="control-panel-top" style="position: absolute; top: 10px; left: 10px; z-index: 9999; display: flex; align-items: center; gap: 18px;">
         <button type="button" class="refresh-button" id="settings-btn" title="Indicator Settings" style="color: #ffffff; font-weight: bold;">⚙️</button>
         <div class="tf-selector">
           <button class="tf-btn active" data-tf="1m">1</button>
@@ -107,7 +107,7 @@
       </div>
       
       <!-- Indicator Toggles (Below TF) -->
-      <div class="indicator-toggles" style="position: absolute; top: 45px; left: 10px; z-index: 9999; display: flex; align-items: center; gap: 4px;">
+      <div class="indicator-toggles" style="position: absolute; top: 50px; left: 10px; z-index: 9999; display: flex; align-items: center; gap: 10px;">
         <button class="refresh-button" id="ma7-toggle-btn" title="Toggle MA7" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px;">MA7</button>
         <button class="refresh-button" id="ma25-toggle-btn" title="Toggle MA25" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px;">MA25</button>
         <button class="refresh-button" id="ma99-toggle-btn" title="Toggle MA99" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px;">MA99</button>
@@ -117,17 +117,14 @@
       </div>
       <!-- Bottom Control Panel (Scanners & Indicators) -->
       <div class="control-panel">
-
-        <button class="refresh-button" id="crsi-scan-btn" title="Scan coins with cRSI>65 on 1m" style="color: #00e676; font-weight: bold; width: auto; padding: 0 8px; font-size: 11px;">🚀 cRSI</button>
-        <button class="refresh-button" id="ma99-scan-btn" title="Scan coins near EMA99 on 4H (≤1.5%)" style="color: #2196F3; font-weight: bold; width: auto; padding: 0 8px; font-size: 11px;">📍 MA99</button>
-
-
-        <button class="refresh-button" id="toggle-fibo-btn" title="Toggle Auto Fibonacci" style="color: #FFD700; font-weight: bold; width: auto; padding: 0 8px; font-size: 11px;">📐 FIBO</button>
-        <button class="refresh-button" id="toggle-vpvr-btn" title="Toggle Volume Profile (VPVR)" style="color: #9C27B0; font-weight: bold; width: auto; padding: 0 8px; font-size: 11px;">🧱 VPVR</button>
-        <button class="refresh-button" id="rsi-toggle-btn" title="Toggle RSI Oscillator" style="color: #7E57C2; font-weight: bold; width: auto; padding: 0 8px; font-size: 11px;">📊 RSI</button>
-        <button class="refresh-button" id="srsi-toggle-btn" title="Toggle Stochastic RSI" style="color: #00E676; font-weight: bold; width: auto; padding: 0 8px; font-size: 11px;">📊 SRSI</button>
-        <button class="refresh-button" id="mstt-toggle-btn" title="Toggle Market Structure Trend Targets" style="color: #54b6d4; font-weight: bold; width: auto; padding: 0 8px; font-size: 11px;">📈 MSTT</button>
-        <button class="refresh-button" id="mstm-toggle-btn" title="Toggle Market Structure Trend Matrix" style="color: #34e67e; font-weight: bold; width: auto; padding: 0 8px; font-size: 11px;">🟢 MSTM</button>
+        <button class="refresh-button" id="crsi-scan-btn" title="Scan coins with cRSI>65 on 1m" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px; border: 1px solid #ffffff;">cRSI SCAN</button>
+        <button class="refresh-button" id="ma99-scan-btn" title="Scan coins near EMA99 on 4H (≤1.5%)" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px; border: 1px solid #ffffff;">MA99 SCAN</button>
+        <button class="refresh-button" id="toggle-fibo-btn" title="Toggle Auto Fibonacci" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px; border: 1px solid transparent;">FIBO</button>
+        <button class="refresh-button" id="toggle-vpvr-btn" title="Toggle Volume Profile (VPVR)" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px; border: 1px solid transparent;">VPVR</button>
+        <button class="refresh-button" id="rsi-toggle-btn" title="Toggle RSI Oscillator" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px; border: 1px solid transparent;">RSI</button>
+        <button class="refresh-button" id="srsi-toggle-btn" title="Toggle Stochastic RSI" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px; border: 1px solid transparent;">SRSI</button>
+        <button class="refresh-button" id="mstt-toggle-btn" title="Toggle Market Structure Trend Targets" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px; border: 1px solid transparent;">MSTT</button>
+        <button class="refresh-button" id="mstm-toggle-btn" title="Toggle Market Structure Trend Matrix" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px; border: 1px solid transparent;">MSTM</button>
       </div>
       <!-- Quick Favorites Bar -->
       <div id="favorites-bar" class="favorites-bar"></div>
@@ -160,7 +157,7 @@
       </div>
 
       <!-- Clear All Notifications Button (Bottom Right) -->
-      <button type="button" class="refresh-button" id="clear-toasts-btn" title="Clear All Notifications" style="display: none; position: absolute; bottom: 3.5%; right: 10.5%; z-index: 9000; color: #FF5252; font-weight: bold; width: auto; padding: 4px 8px; font-size: 11px; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.5); backdrop-filter: blur(4px); cursor: pointer;" onclick="event.preventDefault(); event.stopPropagation(); const c = document.getElementById('toast-container'); if(c) c.innerHTML=''; document.querySelectorAll('.toast, .radar-toast').forEach(t => t.remove()); this.style.display='none';">🗑️ CLEAR</button>
+      <button type="button" class="refresh-button" id="clear-toasts-btn" title="Clear All Notifications" style="display: none; position: absolute; bottom: 25px; right: 20px; z-index: 9000; color: #FF5252; font-weight: bold; width: auto; padding: 4px 8px; font-size: 11px; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.5); backdrop-filter: blur(4px); cursor: pointer;" onclick="event.preventDefault(); event.stopPropagation(); const c = document.getElementById('toast-container'); if(c) c.innerHTML=''; document.querySelectorAll('.toast, .radar-toast').forEach(t => t.remove()); this.style.display='none';">🗑️ CLEAR</button>
 
     </div> <!-- Penutup app-container -->
   </body>
