@@ -9,8 +9,8 @@
     <link rel="manifest" href="./manifest.json">
     <title>Sniper</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/assets/index-w2xWIHHQ.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-B-0hcjWB.css">
+    <script type="module" crossorigin src="/assets/index-C-xVnNIq.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Cm7R4RKK.css">
   <link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
   <body>
     <div class="app-container">
@@ -103,7 +103,7 @@
           <button class="tf-btn" data-tf="1w">1W</button>
           <button class="tf-btn" data-tf="1M">1M</button>
         </div>
-        <button class="refresh-button" id="refresh-btn" title="Refresh App (F5)" onclick="location.reload()">🔄</button>
+        <button class="refresh-button" id="refresh-btn-legacy" title="Refresh App (F5)" onclick="location.reload()" style="display:none;">🔄</button>
       </div>
       
       <!-- Indicator Toggles (Below TF) -->
@@ -162,5 +162,13 @@
       <button type="button" class="refresh-button" id="clear-toasts-btn" title="Clear All Notifications" style="display: none; position: absolute; bottom: 25px; right: 20px; z-index: 9000; color: #FF5252; font-weight: bold; width: auto; padding: 4px 8px; font-size: 11px; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.5); backdrop-filter: blur(4px); cursor: pointer;" onclick="event.preventDefault(); event.stopPropagation(); const c = document.getElementById('toast-container'); if(c) c.innerHTML=''; document.querySelectorAll('.toast, .radar-toast').forEach(t => t.remove()); this.style.display='none';">🗑️ CLEAR</button>
 
     </div> <!-- Penutup app-container -->
+    <!-- Floating Refresh FAB -->
+    <button id="fab-refresh" class="fab-refresh" title="Refresh App">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="23 4 23 10 17 10"></polyline>
+        <polyline points="1 20 1 14 7 14"></polyline>
+        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+      </svg>
+    </button>
   </body>
 </html>
