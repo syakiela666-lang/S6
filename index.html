@@ -9,8 +9,8 @@
     <link rel="manifest" href="./manifest.json">
     <title>Sniper</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/assets/index-CNeyRwnn.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Cm7R4RKK.css">
+    <script type="module" crossorigin src="/assets/index-BfswURVM.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Rtl1HQWz.css">
   <link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
   <body>
     <div class="app-container">
@@ -90,7 +90,10 @@
       
       <!-- Top Control Panel (Refresh, Snap, TF) -->
       <div class="control-panel-top" style="position: absolute; top: 10px; left: 10px; z-index: 9999; display: flex; align-items: center; gap: 18px;">
-        <button type="button" class="refresh-button" id="settings-btn" title="Indicator Settings" style="color: #ffffff; font-weight: bold;">⚙️</button>
+        <div style="display: flex; align-items: center; gap: 4px;">
+          <button type="button" class="refresh-button" id="settings-btn" title="Indicator Settings" style="color: #ffffff; font-weight: bold;">⚙️</button>
+          <button class="refresh-button" id="overlay-toggles-btn" title="Show/Hide MA, BB, EMA Overlays" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 12px; height: 30px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2);">👁</button>
+        </div>
         <div class="tf-selector">
           <button class="tf-btn active" data-tf="1m">1</button>
           <button class="tf-btn" data-tf="5m">5</button>
@@ -98,35 +101,18 @@
           <button class="tf-btn" data-tf="30m">30</button>
           <button class="tf-btn" data-tf="1h">1H</button>
           <button class="tf-btn" data-tf="4h">4H</button>
+          <button class="tf-btn" data-tf="12h">12H</button>
           <button class="tf-btn" data-tf="1d">1D</button>
           <button class="tf-btn" data-tf="3d">3D</button>
-          <button class="tf-btn" data-tf="1w">1W</button>
-          <button class="tf-btn" data-tf="1M">1M</button>
         </div>
         <button class="refresh-button" id="refresh-btn-legacy" title="Refresh App (F5)" onclick="location.reload()" style="display:none;">🔄</button>
       </div>
-      
-      <!-- Indicator Toggles (Below TF) -->
-      <div class="indicator-toggles" style="position: absolute; top: 50px; left: 10px; z-index: 9999; display: flex; align-items: center; gap: 10px;">
-        <button class="refresh-button" id="ma7-toggle-btn" title="Toggle MA7" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px;">MA7</button>
-        <button class="refresh-button" id="ma25-toggle-btn" title="Toggle MA25" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px;">MA25</button>
-        <button class="refresh-button" id="ma99-toggle-btn" title="Toggle MA99" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px;">MA99</button>
-        <button class="refresh-button" id="bb-toggle-btn" title="Toggle Bollinger Bands" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px;">BB</button>
-        <button class="refresh-button" id="ema34-toggle-btn" title="Toggle EMA34" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px;">EMA34</button>
-        <button class="refresh-button" id="ema50-toggle-btn" title="Toggle EMA50" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px;">EMA50</button>
-        <button class="refresh-button" id="ema90-toggle-btn" title="Toggle EMA90" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px;">EMA90</button>
-        <button class="refresh-button" id="ema200-toggle-btn" title="Toggle EMA200" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px;">EMA200</button>
-      </div>
-      <!-- Bottom Control Panel (Scanners & Indicators) -->
+      <!-- Bottom Control Panel (Scanners only) -->
       <div class="control-panel">
         <button class="refresh-button" id="crsi-scan-btn" title="Scan coins with cRSI>65 on 1m" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px; border: 1px solid #ffffff;">cRSI SCAN</button>
         <button class="refresh-button" id="ma99-scan-btn" title="Scan coins near EMA99 on 4H (≤1.5%)" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px; border: 1px solid #ffffff;">MA99 SCAN</button>
-        <button class="refresh-button" id="toggle-fibo-btn" title="Toggle Auto Fibonacci" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px; border: 1px solid transparent;">FIBO</button>
-        <button class="refresh-button" id="toggle-vpvr-btn" title="Toggle Volume Profile (VPVR)" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px; border: 1px solid transparent;">VPVR</button>
-        <button class="refresh-button" id="rsi-toggle-btn" title="Toggle RSI Oscillator" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px; border: 1px solid transparent;">RSI</button>
-        <button class="refresh-button" id="srsi-toggle-btn" title="Toggle Stochastic RSI" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px; border: 1px solid transparent;">SRSI</button>
-        <button class="refresh-button" id="mstt-toggle-btn" title="Toggle Market Structure Trend Targets" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px; border: 1px solid transparent;">MSTT</button>
-        <button class="refresh-button" id="mstm-toggle-btn" title="Toggle Market Structure Trend Matrix" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 10px; height: 20px; border-radius: 4px; border: 1px solid transparent;">MSTM</button>
+        <!-- Indicators Gear Button -->
+        <button class="refresh-button" id="indicators-gear-btn" title="Indicator Toggles & cRSI Settings" style="color: #ffffff; font-weight: bold; width: auto; padding: 0 6px; font-size: 12px; height: 20px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.3);">⚙️</button>
       </div>
       <!-- Quick Favorites Bar -->
       <div id="favorites-bar" class="favorites-bar"></div>
@@ -147,14 +133,29 @@
         </div>
       </div>
 
-      <!-- cRSI Cycle Length Controller (Bottom Right) -->
-      <div class="crsi-control-bottom" style="position:absolute; bottom:65px; left:10px; z-index:9999; display:flex; align-items:center; background:rgba(42, 46, 57, 0.9); border:1px solid rgba(197, 203, 206, 0.2); border-radius:6px; overflow:hidden; backdrop-filter:blur(4px); box-shadow:0 4px 6px rgba(0,0,0,0.5); height:32px; padding:0; font-family:Inter,sans-serif;">
-        <button id="crsi-toolbar-toggle-btn" class="font-btn toolbar-toggle-btn" title="Show/Hide cRSI Settings" style="font-size:11px; padding:0 7px; min-width:20px; border-right:1px solid rgba(255,255,255,0.2);">▶</button>
-        <div id="crsi-toolbar-content" class="collapsed" style="display:flex; align-items:center; gap:4px; padding:0 6px;">
-          <button id="crsi-toggle" class="font-btn" style="font-size:13px; padding:0 5px; min-width:26px; height:24px; cursor:pointer; border-right:1px solid rgba(255,255,255,0.1);" title="Show/Hide cRSI">👁</button>
-          <button id="crsi-minus" class="font-btn" style="font-size:14px; padding:0 6px; min-width:28px; height:24px; font-weight:bold; cursor:pointer;">−</button>
-          <input id="crsi-value" type="number" min="10" max="200" step="2" value="20" style="width:45px; height:24px; text-align:center; background:#1a1a2e; color:#fff; border:1px solid #555; border-radius:4px; font-size:12px; padding:0; font-weight:bold; font-family:Inter,sans-serif; cursor:pointer; -moz-appearance:textfield;" />
-          <button id="crsi-plus" class="font-btn" style="font-size:14px; padding:0 6px; min-width:28px; height:24px; font-weight:bold; cursor:pointer;">+</button>
+      <!-- Indicators Gear Modal -->
+      <div id="indicators-gear-modal" class="modal-overlay" style="display: none; z-index: 10000; justify-content: center; align-items: center; background: rgba(0,0,0,0.7);">
+        <div class="modal-content" style="width: 340px; max-width: 94%; background: #1e222d; padding: 16px; border-radius: 12px; border: 1px solid #333; max-height: 75vh; overflow-y: auto; -webkit-overflow-scrolling: touch;">
+          <h3 style="color: #fff; margin-top: 0; margin-bottom: 12px; border-bottom: 1px solid #333; padding-bottom: 10px; font-size: 14px;">⚙️ Indicators & cRSI</h3>
+          <div id="indicators-gear-form" style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- Toggles will be generated by JS -->
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 14px; border-top: 1px solid #333; padding-top: 10px;">
+            <button id="indicators-gear-close-btn" style="background: #333; color: #fff; border: none; padding: 8px 18px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 13px; min-height: 40px; touch-action: manipulation;">Close</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Overlay Toggles Modal (MA, BB, EMA) -->
+      <div id="overlay-toggles-modal" class="modal-overlay" style="display: none; z-index: 10000; justify-content: center; align-items: center; background: rgba(0,0,0,0.7);">
+        <div class="modal-content" style="width: 340px; max-width: 94%; background: #1e222d; padding: 16px; border-radius: 12px; border: 1px solid #333; max-height: 75vh; overflow-y: auto; -webkit-overflow-scrolling: touch;">
+          <h3 style="color: #fff; margin-top: 0; margin-bottom: 12px; border-bottom: 1px solid #333; padding-bottom: 10px; font-size: 14px;">👁 Overlays (MA, BB, EMA)</h3>
+          <div id="overlay-toggles-form" style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- Toggles will be generated by JS -->
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 14px; border-top: 1px solid #333; padding-top: 10px;">
+            <button id="overlay-toggles-close-btn" style="background: #333; color: #fff; border: none; padding: 8px 18px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 13px; min-height: 40px; touch-action: manipulation;">Close</button>
+          </div>
         </div>
       </div>
 
